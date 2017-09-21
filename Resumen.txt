@@ -1,0 +1,22 @@
+Título: Transporte de gotas en un nano-canal recubierto por cepillos poliméricos
+
+
+Estudiamos la influencia de la rigidez de las cadenas poliméricas en el
+flujo de una gota en una nano-canal recubierto por polímeros semiflexibles,
+por medio de simulaciones de Dinámica Molecular. El flujo es inducido aplicando
+una fuerza constante sobre cada partícula, dando lugar a un flujo tipo poiseuille.
+Las cadenas poliméricas están fijadas a las paredes internas del canal por
+un monómero terminal, generando un cepillo que recubre el interior del conducto.
+Se estudia la interacción de la gota líquida con el correspondiente vapor que
+coexiste en las condiciones termodinámicas fijadas. Se observa una menor distancia
+entre gotas sucesivas incrementa la velocidad del tren de gotas.
+
+Imponiendo un potencial del flexión sobre las cadenas poliméricas, se
+exploran las características del cepillo para un amplio rango de longitudes
+de persistencia, permitiendo el estudio de propiedades rheologicas y
+dinámicas del sistema. Encontramos que los cambios en la conformación y dinámica
+de los polímeros semiflexibles, conllevan alteraciones en la fricción cepillo-gota.
+El incremento de la rigidez de las cadenas genera una rápida reducción 
+en la velocidad de la gota, para longitudes de persistencia menores a la
+longitud de contorno. Encontramos una fuerte relación entre la dinámica
+del cepillo polimérico y el transporte de la gota.

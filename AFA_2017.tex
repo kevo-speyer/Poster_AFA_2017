@@ -1,0 +1,638 @@
+%\documentclass[landscape,a0b,final,a4resizeable]{a0poster}
+% final
+\documentclass[spanish,portrait,a0b,final]{a0poster}
+% resize
+%\documentclass[portrait,a0b,final,a4resizeable]{a0poster}
+%\documentclass[portrait,a0b,final]{a0poster}
+%%% Option "a4resizeable" makes it possible ot resize the
+%   poster by the command: psresize -pa4 poster.ps poster-a4.ps
+%   For final printing, please remove option "a4resizeable" !!
+
+\usepackage{epsfig}
+\usepackage[usenames]{color}
+% \usepackage{mathabx}  % symbols
+\usepackage{amsmath}
+\usepackage{amssymb}  % symbols
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{pstricks,pst-grad}
+\usepackage[latin1]{inputenc} % Allows typing accents in the editor directly, without \'a 
+\usepackage{url} % Allows typesetting of url directions 
+%\usepackage{babel}            % Language goes in the \documentclass line 
+%\usepackage{babel}{spanish}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition of some variables and colors
+%\renewcommand{\rho}{\varrho}
+%\renewcommand{\phi}{\varphi}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{2mm}
+\setlength{\parindent}{0.0cm}
+
+
+%%% ----------------- Parameters and macro definitions ---------------------
+
+\textwidth = 88cm
+
+% Title boxes
+\def\ltitu{9.5cm} % Length of the title box
+% Main columns
+\def\lcaja{84.0cm} % Length of the main  boxes  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               Background                     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\background}[3]{
+\newrgbcolor{cgradbegin}{#1}
+\newrgbcolor{cgradend}{#2}
+\psframe[fillstyle=gradient,gradend=cgradend,
+gradbegin=cgradbegin,gradmidpoint=#3](0.,0.)(1.\textwidth,-1.\textheight)
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                Poster                        %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%   \begin{minipage}[c]{0.98\textwidth} ori
+\newenvironment{poster}{
+\begin{center}
+\begin{minipage}[c]{0.98\textwidth}
+}{
+\end{minipage} 
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                pcolumn                       %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{pcolumn}[1]{
+\begin{minipage}{#1\textwidth}
+\begin{center}
+}{
+\end{center}
+\end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                pbox                          %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newrgbcolor{lcolor}{0. 0. 0.80}
+\newrgbcolor{gcolor1}{1. 1. 1.}
+\newrgbcolor{gcolor2}{.80 .80 1.}
+
+\newcommand{\pbox}[4]{
+\psshadowbox[#3]{
+\begin{minipage}[t][#2][t]{#1}
+#4
+\end{minipage}
+}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                myfig                         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \myfig - replacement for \figure
+% necessary, since in multicol-environment 
+% \figure won't work
+
+\newcommand{\myfig}[3][0]{
+\begin{center}
+\vspace{0.5cm}
+\includegraphics[clip,width=#3\hsize,angle=#1]{#2}
+\nobreak\medskip
+\end{center}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                mycaption                     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \mycaption - replacement for \caption
+% necessary, since in multicol-environment \figure and
+% therefore \caption won't work
+
+%\newcounter{figure}
+\setcounter{figure}{1}
+\newcommand{\mycaption}[1]{
+  \vspace*{-1cm}
+  \begin{quote}
+%ori    {{\sc Figure} \arabic{figure}: #1}
+    {\footnotesize #1}
+  \end{quote}
+  \vspace{0.5cm}
+  \stepcounter{figure}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\background{1. 1. 1.}{1. 1. 1.}{0.5}
+
+%\vspace*{2cm}
+
+
+\newrgbcolor{lightblue}{0. 0. 0.80}
+\newrgbcolor{white}{1. 1. 1.}
+\newrgbcolor{black}{0. 0. 0.}
+\newrgbcolor{whiteblue}{.80 .80 1.}
+\newrgbcolor{orange}{.10 .50 .50}
+
+
+\begin{poster}
+%
+%%%%%%%%%%%%%%%%%%%%%  Header and Title %%%%%%%%%%%%%%%%%%%%
+%
+\begin{center} \begin{pcolumn}{0.98}
+\pbox{0.95\textwidth}{\ltitu}{linewidth=2mm,framearc=0.3,linecolor=lightblue,
+fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+%
+%%% Left logo 
+%
+\begin{minipage}[c][9cm][c]{0.1\textwidth} \begin{center}
+%\includegraphics[width=7.0cm,angle=0]{goe-logo.eps}
+\vspace*{-2cm} 
+\includegraphics[width=7.0cm,angle=0]{graphics/Logo_CONICET.eps}
+\end{center} 
+\end{minipage}
+%%% Title
+\begin{minipage}[c][9.5cm][c]{0.78\textwidth} 
+\begin{center} 
+\vspace*{1.0cm}
+{\Huge \bf \sc Droplet transport in a polymer-coated nanochannel }\\[4mm] 
+\vspace*{0.5cm}
+{\Large  {Kevin Speyer}$^{*}$ and \underline{Claudio Pastorino}$^{*}$ \\[5mm] 
+\vspace*{-0.5cm}
+$^{*}$Departamento de Materia Condensada,  Centro Atómico Constituyentes CNEA-CONICET, Buenos Aires, Argentina \\[4mm]}
+\end{center}
+\vspace*{-0.5cm}
+\hspace*{2cm}
+pastor@cnea.gov.ar
+\vspace*{-0.5cm}
+
+%%} % small
+
+\end{minipage}
+%
+%%% Right logo 
+%
+\begin{minipage}[c][12cm][c]{0.1\textwidth} \begin{center}
+
+\vspace*{-2.5cm} \hspace*{1.0cm} \includegraphics[width=5.0cm,angle=0]{graphics/Logo_CNEA.eps}
+
+ \hspace*{1.0cm} \includegraphics[width=5.0cm,angle=0]{graphics/logo-MC_150.eps} \end{center}
+\end{minipage}
+} \end{pcolumn}
+\end{center}
+\vspace*{0.2cm}
+
+
+%%%%%%%%%%% Ends poster header %%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Content
+%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ABSTRACT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{0.0cm}
+\begin{center}
+\begin{pcolumn}{0.87}    % one column abstract 
+\pbox{0.95\textwidth}{12cm}{linewidth=2mm,framearc=0.1,linecolor=blue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}
+{
+\begin{center} 
+{\Large \sl \bf Abstract } 
+\end{center}
+We study the influence of chain stiffness on droplet flow in a nano-channel,
+coated with semiflexible hydrophobic polymers by means of non-equilibrium
+molecular-dynamics simulations. The studied system is then a moving
+droplet in the slit channel, coexisting with its vapor and subjected
+to periodic boundary conditions in the flow direction. The polymer
+chains, grafted by the terminal bead to the confining walls, are described
+by a coarse-grained model that accounts for chain connectivity, excluded
+volume interactions and local chain stiffness. The rheological, frictional
+and dynamical properties of the brush are explored over a wide range
+of persistence lengths. We find a rich behavior of polymer conformations
+and concomitant changes in the friction properties over the wide range
+of studied polymer stiffnesses. A rapid decrease in the droplet velocity
+was observed as the rigidity of the chains is increased for polymers
+whose persistence length is smaller than their contour length. We
+find a strong relation between the internal dynamics of the brush
+and the droplet transport properties, which could be used to tailor
+flow properties by surface functionalization. The monomers of the
+brush layer, under the droplet, present a collective ``treadmill
+belt'' like dynamics which can only be present due the the existence
+of grafted chains. We describe its changes in spatial extension upon
+variations of polymer stiffness, with bidimensional velocity and density
+profiles. The deformation of the polymer brushes due to the presence
+of the droplet is analyzed in detail. Lastly, The droplet-gas interaction
+is studied by varying the liquid to gas ratio, observing a 16\% speed
+increase for droplets that flow close to each other, compared to a
+train of droplets that present a large gap between consecutive droplets. 
+
+}
+\end{pcolumn}
+\end{center}
+
+\begin{pcolumn}{0.5}    % first coulmn of the poster 1 1
+\pbox{0.9\textwidth}{\lcaja}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}
+{
+%%% * **************************   Introduction   *****************************
+
+        \vspace{0.0cm}
+        \begin{center}
+        \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+        \begin{center}
+        {\LARGE \bf Introduction }
+        \end{center}
+        }
+        \end{center}
+        \vspace{1.0cm}
+
+\begin{center}  {\bf \normalsize \textcolor{red}{\Large System of Interest}  } \end{center}
+
+	            \hspace*{0cm}
+          \begin{minipage}[t]{0.95\textwidth} %Left minipage start
+          \vspace*{0cm}  
+          \myfig[0]{graphics/Muestra3.eps}{0.9}
+          \end{minipage} \hspace*{0cm}  
+          
+Snapshot of the simulated nano-channel. The semiflexible polymer chains (in \textcolor{red}{ \bf red}) are grafted by
+the end bead (in {\color{BlueGreen} \bf light blue}) to the wall of the channel. The fluid (droplet + vapor)
+inside the channel is composed by particles (in {\color{gray} \bf gray}) interacting via a Lennard-Jones potential.
+Periodic boundary conditions are imposed in directions $\hat{x}$ and $\hat{y}$. An external constant force is applied
+to all particles in $\hat{x}$ direction.
+
+           
+          \begin{minipage}[t]{0.95\textwidth}
+          \begin{center}
+        \vspace*{0cm}
+            \myfig[0]{graphics/Brushes3.eps}{0.9}
+          \end{center}
+          \end{minipage} % Right minipage end
+
+Polymers of varying rigidities were used to investigate the friction between droplet and polymer brush.
+The bending constant $k_{\rm b}$ took 3 different values to explore different regimes of persistence
+length over contour length: $l_{\rm p}/l_{\rm c} \simeq 0.1; 1;10$. The interaction between polymers and fluid is
+hydrophobic.
+
+
+        \vspace{2.0cm}
+        \begin{center}
+        \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+        \begin{center}
+        {\LARGE \bf Model and Simulation Techniques }
+        \end{center}
+        }
+        \end{center}
+
+         % \begin{minipage}{1cm}
+          %\vspace*{0.7cm}
+         %{\Huge \textcolor{red}{ $\Rightarrow$} }
+          %\end {minipage}
+          \vspace{1.0cm} 
+          \begin{minipage}{40cm}
+          \begin{itemize}
+          \item Molecular Description: Coarse grain, bead spring model. 
+          \item \textcolor{blue}{\bf \normalsize Molecular Dynamics (MD) + Dissipative Particle Dynamics Thermostat (DPD)}\\[0.5cm]
+          \end{itemize}
+          \end{minipage}
+        \vspace*{0cm}
+    %     {\bf \textcolor{red}{ \bf Sistema modelo:} }
+
+%         Consideramos el caso en que el solvente (líquido polimérico) y las cadenas
+%         del cepillo tienen incompatibilidad química y forman una interfase en la cuál el líquido no entra completamente
+%         en el interior del cepillo.
+%         \framebox{\bf Técnica de Simulación:} \textcolor{blue}{ \bf \normalsize MD + termostato DPD }
+%         para dar cuenta de las interacciones hidrodinámicas (conserva momento localmente)\cite{claudio2}.
+\vspace*{-1cm}
+\begin{center} {\bf \textcolor{red}{ \bf \Large Interactions} } \end{center}
+        \begin{itemize}
+         \item {\bf Chain Connectivity} between contiguous {\sl beads} of the same polymer.
+             Finitely extensible non-linear elastic potential(FENE):
+
+\vspace*{0cm}
+\begin{minipage}[t]{0.48\textwidth} 
+\vspace*{-1cm}
+
+		\[ U_{\rm FENE}=  \begin{cases} -\frac{1}{2}k\ R_{0}^{2}\ln\left[1-(\frac{r}{R_{0}})^{2}\right] 
+		& r\leq R_{0}\\ \infty & r>R_{0} \end{cases} , \] 
+\end{minipage} \begin{minipage}[t]{0.48\textwidth}
+\vspace*{1cm}
+where $R_0=1.5\sigma$, $k=30\varepsilon/\sigma^2$ and $r=|{\mathbf r_{i}}-{\mathbf r{j}}|$ .
+\end{minipage} 
+       %Lennard-Jones 
+
+\vspace*{1cm}
+       \item {\bf Monomer-Monomer Potential}
+           \vspace*{0cm}
+        \hspace*{0cm} 
+
+\begin{minipage}[t]{0.48\textwidth}
+\vspace*{-1cm}
+           \[ U(r) =  \begin{cases} 4\varepsilon[(\frac{\sigma}{r})^{12} -(\frac{\sigma}{r})^6 -U_{LJ}(r_c) ] & r\leq r_c
+          \\ 0  & r > r_c  \end{cases},\]
+%\vspace*{1.1cm} %\varepsilon^{líq-líq}= 1 \varepsilon^{cep-cep}$
+
+          \end{minipage} 
+%\hspace*{-1cm}   
+\begin{minipage}[t]{0.48\textwidth}
+%\hspace{1cm}
+\hspace{1cm}{ \hspace{1cm} \bf \normalsize \textcolor{blue}{Hidrophobic}} liquid-brush interaction
+\[\varepsilon^{liq-cep}=\frac{1}{3}\varepsilon^{liq-liq}=\frac{1}{3}\varepsilon^{cep-cep}\]
+ 
+        %\begin{center}
+%        \vspace*{-6cm}
+         %   \myfig[0]{graphics/Potenciales.eps}{0.85}
+        %  \end{center}
+ \end{minipage} % Right minipage
+        \vspace*{0.4cm}
+           \\ $\sigma=1$. Polymer cut radius: $r_c=2^{\frac{1}{6}}$ (polymers in good solvent conditions).
+
+          %Potencial de Flexión 
+         
+           \vspace*{1cm}
+
+           \item {\bf Wall-Monomer Potential}
+
+           \vspace*{0cm}
+\begin{minipage}[t]{0.3\textwidth}
+\vspace*{-0.5cm}           
+\[ U_{\rm wall}(z) =  |A_w|(\frac{\sigma_w}{z})^{9} -A_w(\frac{\sigma_w}{z})^3 ,  \]
+ \end{minipage} \hspace*{1cm}   \begin{minipage}[t]{0.65\textwidth}
+\vspace*{0.5cm}          
+ with  $A=-3.2\varepsilon$. The walls, fixed at $z=0$ and $z=D$, are impenetrable and have no intrinsic 
+	   roughness.
+	\end{minipage} % Right minipage
+\vspace*{0.5cm}
+\item {\bf Bending Potential}
+
+            \begin{minipage}[t]{0.68\textwidth}
+            \begin{center}
+            \vspace*{-1.5cm}
+             \[ U_{\rm bend}(\theta) =  \frac{1}{2}  k_{\rm b} \theta^{2} \]
+            \end{center}
+        This potential favours chain stretching and adds rigidity to the polymer. A wide range of bending
+	constants ($k_{\rm b}$) were implemented to explore the different rigidity regimes:
+        $k_{\rm b}=0\varepsilon$; $8\varepsilon$; $80\varepsilon$
+        %    \end{center}
+          \end{minipage} \hspace*{1cm}   \begin{minipage}[t]{0.3\textwidth}
+          \begin{center}
+        \vspace*{-2.5cm}
+            \myfig[0]{graphics/Esquema_Bending.eps}{0.6}
+          \end{center}
+          \end{minipage} % Right minipage
+
+           \end{itemize}
+         \vspace*{0.cm} 
+
+%_TABLA_%
+\begin{center} 
+\vspace{0cm}
+    \begin{tabular}{ | c | c | c | c | c |}
+    \hline
+    $k_b$ [$\varepsilon$] & $k_b$/$k_BT$ & $l_p/l_c$  & $l_p/a$ & $\tau_R$ [$\sigma\sqrt{m/\varepsilon}$] \\ \hline
+    0   & 0   & 0.16 & 1.4 & 17 \\ \hline    
+    8   & 10  & 1.12 & 10.1 & 50 \\ \hline
+    80  & 100 & 10.1 & 91 & 260 \\ \hline
+    \end{tabular}
+
+
+\vspace{1cm}
+Table: polymer properties as a function of the bending constant $k_b$: persistence length ($l_p$) and relaxation time ($\tau_R$). Chain contour length $l_c=8.55\sigma$ ($N=10$). Constant simulation temperature $k_bT=0.8\varepsilon$.
+\end{center}
+
+
+}
+\end{pcolumn}   \begin{pcolumn}{0.5} %%%%%%%%%%%%%%%%%%%%% Third column
+\pbox{0.9\textwidth}{\lcaja}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+
+\vspace{0cm}\begin{center}\pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{\begin{center}{\LARGE \bf Results}\end{center}}\end{center}\vspace{0.25cm}
+
+      
+\vspace*{1cm}
+
+%Fluid Velocity Field
+\begin{center} {\bf \Large \textcolor{red}{Fluid Velocity}} \end{center}
+
+% \begin{minipage}[t]{0.23\textwidth}
+ \vspace*{0cm}
+% \myfig[0]{./graphics/Rend3.eps}{0.95}
+%\end{minipage}  \hspace*{2cm}
+\begin{center}
+ \begin{minipage}[t]{0.9\textwidth}
+	% \vspace*{0cm}
+\myfig[0]{./graphics/Fluid_velocity_field.eps}{0.9}
+\end{minipage}
+\end{center}
+
+%Epigraph of Image
+2-D average velocity field of the fluid as a function of x and z coordinates. The droplet is localized in the middle 
+of the figure. It is possilbe to observe that the fluid in vapour phase is slower than the fluid in liquid phase.
+This means that the droplet has a non-zero velocity relative to the gas, which induces a friction force.
+
+\vspace*{2cm}
+% DOPLET VELOCITY VS L
+\begin{center} {\bf \Large \textcolor{red}{Droplet Velocity vs Channel Length}}\end{center}
+
+\begin{center}
+\begin{minipage}[t]{0.8\textwidth}
+% \vspace*{0.4cm}
+\hspace{2cm}
+\myfig[0]{./graphics/mean_dropVel_vs_Lx.eps}{0.75}
+\end{minipage}
+\end{center}
+Droplet velocity as a function of channel length ($L$), for various polymer rigidities ($k_b$). 
+Increasing  the channel Length gives more space to the gas to relax, and reach its terminal 
+velocity ($v_g=0.09\sigma/\tau$). This enhances the velocity difference between droplet and vapour, raising the frition
+force, and thus the velocity of the droplet decreases. For short channel lengths, the mean gas phase velocity is 
+similar to the velocity of the droplet, giving a low friction force. 
+ Inset: Details of droplet velocity at small channel lengths.
+
+%Friction Forces FIG
+\vspace*{2cm}
+ 
+\begin{center} {\bf \Large \textcolor{red}{Friction Forces}}\end{center}
+
+\hspace*{0cm}
+\begin{minipage}[t]{0.5\textwidth}
+ \vspace*{0.7cm}
+%\begin{center} 
+{\textcolor{black}{Friction forces on droplet are caused either by the brush ($F_b$) or the gas ($F_b$)}. 
+We propose a linear relation between force and relative velocity: } 
+
+\begin{itemize}
+\item $F_b = -\gamma_b  v_d$
+
+
+\item $F_g = -\gamma_g  (v_d-v_g)$
+\end{itemize}
+
+%\end{center}
+ 
+ This gives a linear relation between the droplet velocity and the vapour velocity. Fitting this data we can
+ estimate the friction coefficients for brush-droplet and gas-droplet interactions
+
+%\myfig[0]{./graphics/Couette3.eps}{0.99}
+\end{minipage} \hspace*{0.5cm} 
+\begin{minipage}[t]{0.5\textwidth}
+\myfig[0]{./graphics/dropVel_vs_gasVel.mide.eps}{0.9}
+\end{minipage}
+
+\vspace*{-0cm}
+
+\begin{center}
+
+\begin{tabular}{ | c | c | c | c |}
+\hline
+$k_b$ [$\varepsilon$] & $\gamma_g$/$A$  & $\gamma_b$  & $droplet~particles$  \\ \hline
+0   & 0.56   & 28.8 & 4240 \\ \hline
+8   & 0.56  & 22.3 & 3560 \\ \hline
+80  & 0.48 & 18.8 & 3350   \\ \hline
+\end{tabular}
+\end{center}
+ \vspace*{0.7cm}
+Table: Gas and brush friction coefficients for the different bending constants of the polymers. 
+The gas friction constant should not depend on the bending constant of the polymers. Increasing rigidity of the polymer 
+chains lowers the friction between brush and droplet. The las column is the mean number of particles in the droplet.
+
+\vspace*{1cm}
+
+% % start two columns -- LEFT
+%\begin{center} {\bf \Large \textcolor{red}{Slip length and friction coefficient}}\end{center}
+%
+% \begin{minipage}[t]{0.48\textwidth}
+%        \vspace*{-1cm}
+%         \myfig[0]{./graphics/SlipLen_vs_We_gd0.05.eps}{0.99}
+%         \end{minipage} \begin{minipage}[t]{0.48\textwidth}
+%         %%% ---- Right 
+%        \vspace*{-1cm}
+%         \myfig[0]{./graphics/Mu_vs_Shear_Poster.eps}{0.99}
+%         \end{minipage}
+%        \vspace*{1cm}
+%
+%        \mycaption{{\bf Izquierda}: se muestra la ongitud de deslizamiento en función de la velocidad de
+%la pared, para una muestra con $\rho_f=0,05\sigma^{-2}$. {\bf Derecha}: la fuerza realizada por
+%la pared sobre los monómeros fijados en función de la velocidad de la pared, para los mismos sistemas.}
+%
+%{\bf \normalsize \textcolor{blue}{Inclinación de las Cadenas} }
+%\\
+%\begin{minipage}[t]{0.15\textwidth}
+%\vspace{3.0cm}
+%\myfig[0]{./graphics/Rend3.eps}{0.8}
+%\end{minipage}
+%\begin{minipage}[t]{0.8\textwidth}
+%\vspace{-1.0cm}
+%\myfig[0]{./graphics/Theta_vs_Vwall_Poster_GRAD.eps}{0.9}
+%\end{minipage}
+%\vspace{1.0cm}
+%\mycaption{{\bf Izquierda}: Se aprecia una cadena con su ángulo de inclinación $\Theta$. 
+% {\bf Derecha}: Ángulo de inclinación medio de las cadenas en función de la velocidad
+%de la pared. Nótese que las cadenas con $k_f=8\varepsilon$ se doblan más que las cadenas más flexibles, 
+%debido al orden de largo alcance que presentan.} %mycaption
+%
+%\item Al aumentar la rigidez de los polímeros, se logra una mayor inclinación de estas, debido a la mayor
+%correlación entre ángulos de monómeros sucesivos.
+% \item Existe algun valor de $k_f$ a partir de cual la rigidez dificulta el torcimiento de las cadenas.
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \vspace{0cm}
+% \begin{center}
+% \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=whiteblue,gradmidpoint=1.0,framesep=1em}{
+% \begin{center}
+% {\Large Conclusiones }
+% \end{center} }
+% \end{center}
+% \vspace{0.25cm}
+%
+%%{\small
+% \begin{itemize}
+% \item El deslizamiento del líquido sobre el medio confinante es no nulo en todos los casos. Para densidades de
+%fijado altas ($\rho_{f}\geq0,2\sigma^{-2}$), la velocidad de deslizamiento tiende a un valor constante 
+%y es similar para todas las constantes de flexión ($k_f$). 
+% \item Dada la incompatibilidad química entre el los polímeros y el fluido
+% ($\varepsilon^{cep-liq}=\frac{1}{3}\varepsilon^{liq-liq}$), el cepillo logra "sostener" al líquido para 
+%todas las densidades de fijado y constantes de flexión estudiadas. Se comprobó la robustez de este estado, ya que 
+%al  mover las paredes del canal, el líquido siguió sin mojar al cepillo.   
+% \item  La estructuración del cepillo cambia según la rigidez de los polímeros. Para longitudes de 
+%persistencia similares al largo de las cadenas ($k_f\geq8\varepsilon$), las mismas tienden a estiranse
+% en una dirección particular, debido a la correlación entre uinones de monómeros sucesivos.
+%\end{itemize}
+%%} % end small
+
+
+%%% %%%%%%%%%%%%%%%%% BIB %%%%%%%%%%%%%%
+% \vspace*{-2.0cm}
+\textbf{\Large References}
+ 
+K. Speyer and C. Pastorino, \textit{Soft Matter}, 2015, DOI: 10.1039/C5SM01075F
+
+K. Speyer and C. Pastorino, \textit{Langmuir}, 2017, DOI: 10.1021/acs.langmuir.7b02640
+ \vspace*{-1.3cm}
+%\renewcommand{\refname}{Referencias}
+%{\small
+%\begin{thebibliography}{1}
+%
+%\bibitem{0295-5075-102-5-58003}
+%Andrey Milchev,  Kurt Binder.
+%\newblock {\em EPL (Europhysics Letters)}, 102(5):58003, 2013.
+%
+%\bibitem{0953-8984-23-18-184105}
+%F~Leonforte, J~Servantie, C~Pastorino, M~M{\"u}ller.
+%\newblock {\em Journal of Physics: Condensed Matter}, 23(18):184105, 2011.
+%
+%\bibitem{:/content/aip/journal/jcp/140/1/10.1063/1.4851195}
+%C.~Pastorino,  M.~M{\"u}ller.
+%\newblock {\em The Journal of Chemical Physics}, 140(1):--, 2014.
+%
+%\bibitem{pastorino:064902}
+%C.~Pastorino, K.~Binder, T.~Kreer, M.~M{\"u}ller.
+%\newblock {\em The Journal of Chemical Physics}, 124(6):064902, 2006.
+%
+%\bibitem{PhysRevE.76.026706}
+%C.~Pastorino, T.~Kreer, M.~M\"uller, K.~Binder.
+%\newblock {\em Phys. Rev. E}, 76:026706, Aug 2007.
+%
+%\end{thebibliography}
+%
+%
+%
+%
+%% \begin{thebibliography}{77}
+%% 
+%%%\bibitem{claudio3} M.  M\"uller and C. Pastorino,
+%%% {\sl Europhys. Lett. }  {\bf 81}, 28002 (2008).
+%%
+%%\bibitem{claudio2} C. Pastorino, T. Kreer, M.  M\"uller and K. Binder, 
+%% {\sl Phys. Rev. E}  {\bf 76}, 026706 (2007).
+%%
+%%\bibitem{claudio1} C. Pastorino, K. Binder, T. Kreer, and M.
+%%M\"uller, J. Chem. Phys. {\bf 124},  64902 (2006)   
+%%
+%%\bibitem{claudio4} C. Pastorino, K. Binder, and M.  M\"uller, 
+%%{\bf submitted to } {\sl Macromolecules} {\bf 42}, 401 (2009)
+%%\bibitem{fabien} F. Léonforte, J. Servantie, C. Pastorino, and M. Müller ,
+%%aceptado en  {\sl J. Phys. Cond. Matt.} (2010)
+%%\bibitem{doyle} P. S. Doyle, B. Ladoux and J. L. Viovy,  {\sl Phys. Rev. Lett. } {\bf 84}, 4769 (2000)
+%%%\bibitem{winkler} R. G. Winkler , {\sl Phys. Rev. Lett.} {\bf 97}, 128301 (2006)
+%%\bibitem{gerashenko} S. Gerashenko and V. Steinberg, {\sl Phys. Rev. Lett.}  {\bf 96}, 38304 (2006)
+%% \end{thebibliography}
+%} %end small  
+ }
+\end{pcolumn}
+%  ********************************** END OF POSTER *********************************** 
+\end{poster}
+% *************************************** END  ***************************************
+\end{document}
+
