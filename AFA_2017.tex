@@ -155,7 +155,7 @@ gradbegin=cgradbegin,gradmidpoint=#3](0.,0.)(1.\textwidth,-1.\textheight)
 %%%%%%%%%%%%%%%%%%%%%  Header and Title %%%%%%%%%%%%%%%%%%%%
 %
 \begin{center} \begin{pcolumn}{0.98}
-\pbox{0.95\textwidth}{\ltitu}{linewidth=2mm,framearc=0.3,linecolor=lightblue,
+\pbox{0.95\textwidth}{\ltitu}{linewidth=2mm,framearc=0.3,linecolor=black,
 fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
 %
 %%% Left logo 
@@ -171,7 +171,7 @@ fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,fr
 \begin{center} 
 \vspace*{1.0cm}
 {\Huge \bf \sc Droplet transport in a polymer-coated nanochannel }\\[4mm] 
-\vspace*{0.5cm}
+\vspace*{0.2cm}
 {\Large  {Kevin Speyer}$^{*}$ and \underline{Claudio Pastorino}$^{*}$ \\[5mm] 
 \vspace*{-0.5cm}
 $^{*}$Departamento de Materia Condensada,  Centro Atómico Constituyentes CNEA-CONICET, Buenos Aires, Argentina \\[4mm]}
@@ -208,7 +208,7 @@ pastor@cnea.gov.ar
 \vspace{0.0cm}
 \begin{center}
 \begin{pcolumn}{0.87}    % one column abstract 
-\pbox{0.95\textwidth}{12cm}{linewidth=2mm,framearc=0.1,linecolor=blue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}
+\pbox{0.95\textwidth}{12cm}{linewidth=2mm,framearc=0.3,linecolor=blue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}
 {
 \begin{center} 
 {\Large \sl \bf Abstract } 
@@ -245,13 +245,13 @@ train of droplets that present a large gap between consecutive droplets.
 \end{center}
 
 \begin{pcolumn}{0.5}    % first coulmn of the poster 1 1
-\pbox{0.9\textwidth}{\lcaja}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}
+\pbox{0.9\textwidth}{\lcaja}{linewidth=2mm,framearc=0.1,linecolor=black,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}
 {
 %%% * **************************   Introduction   *****************************
 
         \vspace{0.0cm}
         \begin{center}
-        \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+        \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=black,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
         \begin{center}
         {\LARGE \bf Introduction }
         \end{center}
@@ -289,7 +289,7 @@ to all particles in $\hat{x}$ direction.
 
         \vspace{2.0cm}
         \begin{center}
-        \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+        \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=black,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
         \begin{center}
         {\LARGE \bf Model and Simulation Techniques }
         \end{center}
@@ -384,11 +384,17 @@ where $R_0=1.5\sigma$, $k=30\varepsilon/\sigma^2$ and $r=|{\mathbf r_{i}}-{\math
             \end{center}
         This potential favours chain stretching and adds rigidity to the polymer. A wide range of bending
 	constants ($k_{\rm b}$) were implemented to explore the different rigidity regimes:
-        $k_{\rm b}=0\varepsilon$; $8\varepsilon$; $80\varepsilon$
+        $ 0 < k_{\rm b} < 160\varepsilon $%  ; $8\varepsilon$; $80\varepsilon$
+
+        Or in terms of persistence length ($l_p$) over contour length ($l_c$):
+        $ 0 < l_p/l_c < 22 $
+
+        The reduced persistence length ($l_p/l_c$) is the dimensionless quantity that meassures the
+        polymer rigidity. 
         %    \end{center}
           \end{minipage} \hspace*{1cm}   \begin{minipage}[t]{0.3\textwidth}
           \begin{center}
-        \vspace*{-2.5cm}
+        \vspace*{-0.0cm}
             \myfig[0]{graphics/Esquema_Bending.eps}{0.6}
           \end{center}
           \end{minipage} % Right minipage
@@ -415,9 +421,9 @@ where $R_0=1.5\sigma$, $k=30\varepsilon/\sigma^2$ and $r=|{\mathbf r_{i}}-{\math
 
 }
 \end{pcolumn}   \begin{pcolumn}{0.5} %%%%%%%%%%%%%%%%%%%%% Third column
-\pbox{0.9\textwidth}{\lcaja}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
+\pbox{0.9\textwidth}{\lcaja}{linewidth=2mm,framearc=0.1,linecolor=black,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{
 
-\vspace{0cm}\begin{center}\pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{\begin{center}{\LARGE \bf Results}\end{center}}\end{center}\vspace{0.25cm}
+\vspace{0cm}\begin{center}\pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=black,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=white,gradmidpoint=1.0,framesep=1em}{\begin{center}{\LARGE \bf Results}\end{center}}\end{center}\vspace{0.25cm}
 
       
 \vspace*{1cm}
@@ -430,154 +436,86 @@ where $R_0=1.5\sigma$, $k=30\varepsilon/\sigma^2$ and $r=|{\mathbf r_{i}}-{\math
 % \myfig[0]{./graphics/Rend3.eps}{0.95}
 %\end{minipage}  \hspace*{2cm}
 \begin{center}
- \begin{minipage}[t]{0.95\textwidth}
+ \begin{minipage}[t]{0.99\textwidth}
 	% \vspace*{0cm}
-\myfig[0]{./graphics/Rend_p_histo_2D_3.eps}{0.95}
+\myfig[0]{./graphics/Rend_p_histo_2D_3.eps}{0.99}
 \end{minipage}
 \end{center}
 
 %Epigraph of Image
-2-D average velocity field of the fluid as a function of x and z coordinates. The droplet is localized in the middle 
-of the figure. It is possilbe to observe that the fluid in vapour phase is slower than the fluid in liquid phase.
-This means that the droplet has a non-zero velocity relative to the gas, which induces a friction force.
+Polymer's end-bead distribution is shown
+as a color map. The correspondence between colors and monomer density
+(given in units of $\sigma^{-3}$) is shown in the color bar at the
+bottom. The black arrows, composing a vector field, represent the mean
+momentum of the end-beads of the polymers. These graphs are presented
+for various rigidities, from left to right and top to bottom: $l_{p}/l_{c}=0.1;\,0.72;\,2.9;\,8.3$.
+
 
 \vspace*{2cm}
 % DOPLET VELOCITY VS L
 \begin{center} {\bf \Large \textcolor{red}{Droplet Velocity vs Polymer Rigidity}}\end{center}
 
 \begin{center}
-\begin{minipage}[t]{0.49\textwidth}
+
+\begin{minipage}[t]{0.45\textwidth}
 % \vspace*{0.4cm}
-\hspace{2cm}
-\myfig[0]{./graphics/dropVel_vs_rigidity.eps}{0.9}
+\hspace{0cm}
+\myfig[0]{./graphics/dropVel_vs_rigidity.eps}{0.99}
+Droplet velocity with respect
+to the reduced persistence length of the polymers. The inset shows
+the droplet velocity plotted against the persistence length in a semi-log
+graph to highlight the behavior at low persistence lengths. For $l_p/l_c<2$ the droplet
+velocity decreases rapidly with increasing polymer rigidity. The liquid velocity is highly
+influenced by the polymer dynamics. 
 \end{minipage}
-\begin{minipage}[t]{0.49\textwidth}
-% \vspace*{0.4cm}
 \hspace{2cm}
-\myfig[0]{./graphics/SlipVel_vs_rigidity3.eps}{0.9}
+\begin{minipage}[t]{0.45\textwidth}
+% \vspace*{0.4cm}
+\hspace{0cm}
+\myfig[0]{./graphics/SlipVel_vs_rigidity3.eps}{0.99}
+Velocity of the brush (black circles)
+and liquid (red squares) in the brush-liquid interface are plotted
+with respect to the reduced persistence length. The difference between
+these velocities, shows how the liquid boundary layer passes over
+the brush boundary layer (open green diamonds). Inset: droplet velocity
+versus the liquid boundary layer velocity.
 \end{minipage}
 \end{center}
-Droplet velocity as a function of channel length ($L$), for various polymer rigidities ($k_b$). 
-Increasing  the channel Length gives more space to the gas to relax, and reach its terminal 
-velocity ($v_g=0.09\sigma/\tau$). This enhances the velocity difference between droplet and vapour, raising the frition
-force, and thus the velocity of the droplet decreases. For short channel lengths, the mean gas phase velocity is 
-similar to the velocity of the droplet, giving a low friction force. 
- Inset: Details of droplet velocity at small channel lengths.
-
 %Friction Forces FIG
 \vspace*{2cm}
  
 \begin{center} {\bf \Large \textcolor{red}{Flow Across the Channel}}\end{center}
 
-\hspace*{0cm}
-\begin{minipage}[t]{0.5\textwidth}
- \vspace*{0.7cm}
-%\begin{center} 
-{\textcolor{black}{Friction forces on droplet are caused either by the brush ($F_b$) or the gas ($F_b$)}. 
-We propose a linear relation between force and relative velocity: } 
+\begin{center} 
+%\hspace*{0cm}
+% \vspace*{1.0cm} 
+\begin{minipage}[t]{0.42\textwidth}
+ \vspace*{1.0cm}
+Fluid velocity in the direction of the
+flow ($\hat{x}$) as a function of the x coordinate (in log scale).
+The droplet ($x<48\sigma$) travels at a higher velocity than the
+vapor phase ($x>48\sigma$). It is also possible to observe that gas
+velocity decays exponentially with x. Inset: 2-dimensional density profile of the droplet, with the liquid
+velocity field overlayed. The velocities are calculated in the frame
+of reference of the center of mass of the droplet. The color legend
+shows the liquid number density in units of $\sigma^{-3}$.
 
-\begin{itemize}
-\item $F_b = -\gamma_b  v_d$
+\end{minipage} 
+\hspace*{0.5cm} 
+%\vspace*{0.0cm}
+\begin{minipage}[t]{0.55\textwidth}
+\hspace*{1.6cm}
 
-
-\item $F_g = -\gamma_g  (v_d-v_g)$
-\end{itemize}
-
-%\end{center}
- 
- This gives a linear relation between the droplet velocity and the vapour velocity. Fitting this data we can
- estimate the friction coefficients for brush-droplet and gas-droplet interactions
-
-%\myfig[0]{./graphics/Couette3.eps}{0.99}
-\end{minipage} \hspace*{0.5cm} 
-\begin{minipage}[t]{0.5\textwidth}
-\myfig[0]{./graphics/vfluid_vs_Lx_3.eps}{0.9}
+\vspace*{-2.1cm}
+\myfig[0]{./graphics/vfluid_vs_Lx_4.eps}{0.99}
 \end{minipage}
-
-\vspace*{-0cm}
-
-%\begin{center}
-%\begin{tabular}{ | c | c | c | c |}
-%\hline
-%$k_b$ [$\varepsilon$] & $\gamma_g$/$A$  & $\gamma_b$  & $droplet~particles$  \\ \hline
-%0   & 0.56   & 28.8 & 4240 \\ \hline
-%8   & 0.56  & 22.3 & 3560 \\ \hline
-%80  & 0.48 & 18.8 & 3350   \\ \hline
-%\end{tabular}
-%\end{center}
-% \vspace*{0.7cm}
-%Table: Gas and brush friction coefficients for the different bending constants of the polymers. 
-%The gas friction constant should not depend on the bending constant of the polymers. Increasing rigidity of the polymer 
-%chains lowers the friction between brush and droplet. The las column is the mean number of particles in the droplet.
+\end{center}
 
 \vspace*{1cm}
 
-% % start two columns -- LEFT
-%\begin{center} {\bf \Large \textcolor{red}{Slip length and friction coefficient}}\end{center}
-%
-% \begin{minipage}[t]{0.48\textwidth}
-%        \vspace*{-1cm}
-%         \myfig[0]{./graphics/SlipLen_vs_We_gd0.05.eps}{0.99}
-%         \end{minipage} \begin{minipage}[t]{0.48\textwidth}
-%         %%% ---- Right 
-%        \vspace*{-1cm}
-%         \myfig[0]{./graphics/Mu_vs_Shear_Poster.eps}{0.99}
-%         \end{minipage}
-%        \vspace*{1cm}
-%
-%        \mycaption{{\bf Izquierda}: se muestra la ongitud de deslizamiento en función de la velocidad de
-%la pared, para una muestra con $\rho_f=0,05\sigma^{-2}$. {\bf Derecha}: la fuerza realizada por
-%la pared sobre los monómeros fijados en función de la velocidad de la pared, para los mismos sistemas.}
-%
-%{\bf \normalsize \textcolor{blue}{Inclinación de las Cadenas} }
-%\\
-%\begin{minipage}[t]{0.15\textwidth}
-%\vspace{3.0cm}
-%\myfig[0]{./graphics/Rend3.eps}{0.8}
-%\end{minipage}
-%\begin{minipage}[t]{0.8\textwidth}
-%\vspace{-1.0cm}
-%\myfig[0]{./graphics/Theta_vs_Vwall_Poster_GRAD.eps}{0.9}
-%\end{minipage}
-%\vspace{1.0cm}
-%\mycaption{{\bf Izquierda}: Se aprecia una cadena con su ángulo de inclinación $\Theta$. 
-% {\bf Derecha}: Ángulo de inclinación medio de las cadenas en función de la velocidad
-%de la pared. Nótese que las cadenas con $k_f=8\varepsilon$ se doblan más que las cadenas más flexibles, 
-%debido al orden de largo alcance que presentan.} %mycaption
-%
-%\item Al aumentar la rigidez de los polímeros, se logra una mayor inclinación de estas, debido a la mayor
-%correlación entre ángulos de monómeros sucesivos.
-% \item Existe algun valor de $k_f$ a partir de cual la rigidez dificulta el torcimiento de las cadenas.
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \vspace{0cm}
-% \begin{center}
-% \pbox{0.8\textwidth}{}{linewidth=2mm,framearc=0.1,linecolor=lightblue,fillstyle=gradient,gradangle=0,gradbegin=white,gradend=whiteblue,gradmidpoint=1.0,framesep=1em}{
-% \begin{center}
-% {\Large Conclusiones }
-% \end{center} }
-% \end{center}
-% \vspace{0.25cm}
-%
-%%{\small
-% \begin{itemize}
-% \item El deslizamiento del líquido sobre el medio confinante es no nulo en todos los casos. Para densidades de
-%fijado altas ($\rho_{f}\geq0,2\sigma^{-2}$), la velocidad de deslizamiento tiende a un valor constante 
-%y es similar para todas las constantes de flexión ($k_f$). 
-% \item Dada la incompatibilidad química entre el los polímeros y el fluido
-% ($\varepsilon^{cep-liq}=\frac{1}{3}\varepsilon^{liq-liq}$), el cepillo logra "sostener" al líquido para 
-%todas las densidades de fijado y constantes de flexión estudiadas. Se comprobó la robustez de este estado, ya que 
-%al  mover las paredes del canal, el líquido siguió sin mojar al cepillo.   
-% \item  La estructuración del cepillo cambia según la rigidez de los polímeros. Para longitudes de 
-%persistencia similares al largo de las cadenas ($k_f\geq8\varepsilon$), las mismas tienden a estiranse
-% en una dirección particular, debido a la correlación entre uinones de monómeros sucesivos.
-%\end{itemize}
-%%} % end small
-
 
 %%% %%%%%%%%%%%%%%%%% BIB %%%%%%%%%%%%%%
-% \vspace*{-2.0cm}
+\vspace*{-2.0cm}
 \textbf{\Large References}
  
 K. Speyer and C. Pastorino, \textit{Soft Matter}, 2015, DOI: 10.1039/C5SM01075F
